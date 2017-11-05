@@ -10,7 +10,7 @@ module.exports = function(app, db) {
 			if (err) {
 				res.send({'error':'An error has occurred'});
 			} else {
-				res.render('allstudents', {results: results});
+				res.render('allstudents', {students: results});
 			}
 		});
 	});
@@ -65,7 +65,7 @@ module.exports = function(app, db) {
 			if (err) {
 				res.send({ 'error': 'An error has occured' });
 			} else {
-				res.render('liststudent', {student:result.ops[0]});
+				res.render('liststudent', {student: result.ops[0]});
 			}
 		});
 	});
