@@ -26,6 +26,6 @@ MongoClient.connect(db.url, (err, data) => {
 	if (err) return console.log(err)
 	require('./app/routes')(app, data);
 	app.listen(process.env.PORT || port, () => {
-		console.log('API builing in progress, testing on: ' + port);
+		console.log('We re live now, done building: ' + port);
 	});
 })
