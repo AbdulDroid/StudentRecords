@@ -48,8 +48,8 @@ module.exports = function(app, db) {
 	});
 
 	app.get('/students/edit/:regno', function(req, res, next){
-		const regno = req.params.regno;
-		db.collection('students').findOne( id,(err,item) =>{
+		const regno = {'regno': req.params.regno};
+		db.collection('students').findOne( regno, (err, item) =>{
     if (err) {
         res.send({'error':'An error has occurred'});
       } else {
