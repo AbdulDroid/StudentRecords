@@ -1,0 +1,24 @@
+<div class="container">
+<h3>Student details</h3>
+<ul class="list-group">
+  <li class="list-group-item"><strong>First Name: </strong>{{student.firstname}}</li>
+  <li class="list-group-item"><strong>Lastname: </strong>{{student.lastname}}</li>
+  <li class="list-group-item"><strong>Registration No.: </strong>{{student.regno}}</li>
+  <li class="list-group-item"><strong>Email: </strong>{{student.email}}</li>
+  <li class="list-group-item"><strong>Sex: </strong>{{student.sex}}</li>
+  <li class="list-group-item"><strong>School: </strong>{{student.school}}</li>
+  <li class="list-group-item"><strong>Department: </strong>{{student.department}}</li>
+  <li class="list-group-item"><strong>Level: </strong>{{student.level}}</li>
+</ul>
+
+
+
+<form method="PUT" action="/student/edit">
+  <input type="submit" class="btn btn-info " value="EDIT">
+</form>
+
+<form method="POST" action="/student/delete/{{student._id}}">
+  <input type="submit" class="btn btn-danger " value="Delete">
+</form>
+<a class="btn btn-success " href="/">Done</a>
+</div>
