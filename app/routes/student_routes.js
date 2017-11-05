@@ -104,7 +104,7 @@ module.exports = function(app, db) {
 		   department: department, email: email,
 		    sex: sex, level: level,
 		     imageUrl: imageUrl, dateCreated: dateCreated};
-		db.collection('students').update(regno, student, (err, result) => {
+		db.collection('students').update(regno, student, { upsert: true } (err, result) => {
 			if (err) {
 				res.send({'error':'An error has occurred'});
 			} else {
