@@ -1,6 +1,10 @@
 
 module.exports = function(app, db) {
 
+	app.get('/', function(req, res, next){
+		res.render('home');
+	});
+
 	app.get('/students', (req, res) => {
 		db.collection('students').find().toArray((err, results) => {
 			if (err) {
@@ -33,7 +37,7 @@ module.exports = function(app, db) {
 		});
 	});
 
-	app.put('/students/:regno', (req, res) => {
+	app.put('/students/edit/:regno', (req, res) => {
 		const regno = {'regno': req.params.regno};
 		const student = {firstname: req.body.firstName,
 		 lastname: req.body.lastName, regno: req.body.regno,
@@ -50,7 +54,7 @@ module.exports = function(app, db) {
 		});
 	});
 
-	app.post('/students', (req, res) => {
+	app.post('/students/add', (req, res) => {
 		const student = {firstname: req.body.firstName,
 		 lastname: req.body.lastName, regno: req.body.regno,
 		  dob: req.body.dob, school: req.body.school,
