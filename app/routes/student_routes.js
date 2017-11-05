@@ -68,8 +68,8 @@ module.exports = function(app, db) {
 	})
 
 	app.post('/students/add', (req, res, next) => {
-		const student = {firstname: req.body.firstName,
-		 lastname: req.body.lastName, regno: req.body.regno,
+		const student = {firstname: req.body.firstname,
+		 lastname: req.body.lastname, regno: req.body.regno,
 		  dob: req.body.dob, school: req.body.school,
 		   department: req.body.department, email: req.body.email,
 		    sex: req.body.sex, level: req.body.level,
