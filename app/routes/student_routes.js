@@ -51,7 +51,7 @@ module.exports = function(app, db) {
 		res.render('editstudent');
 	});
 
-	app.put('/students/edit', (req, res, next) => {
+	app.post('/students/edit', (req, res, next) => {
 		const regno = {'regno': req.body.regno};
 		var firstname, lastname, email, dob, school, department,
 		sex, level, imageUrl, dateCreated, regno_old;
