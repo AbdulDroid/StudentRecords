@@ -41,7 +41,8 @@ module.exports = function(app, db) {
 			if (err) {
 				res.send({'error': 'An error has occurred'});
 			} else {
-				res.send('Student with Reg. No.: ' + regno + 'has being deleted successfully');
+				console.log('Student with Reg. No.: ' + regno + 'has being deleted successfully');
+				res.redirect('/students');
 			}
 		});
 	});
