@@ -26,7 +26,7 @@ module.exports = function(app, db) {
 		});
 	});
 
-	app.delete('/students/:regno', (req, res) => {
+	app.delete('/students/delete/:regno', (req, res) => {
 		const regno = {'regno' : req.params.regno};
 		db.collection('students').remove(regno, (err, item) => {
 			if (err) {
