@@ -1,37 +1,38 @@
 <div class="container">
 
 <h3>Edit existing Student</h3>
+<p>Please fill only the fields you want to change and leave others blank</p>
 
 {{#if error}} <span>{{error}}</span>{{/if}}
 
 <form method="PUT" action="/students/edit">
   <div class="form-group">
     <label>First Name</label>
-    <input type="text" name="firstname" class="form-control" value={{student.firstname}}>
+    <input type="text" name="firstname" class="form-control" placeholder="First Name">
   </div>
   <div class="form-group">
     <label>Last Name</label>
-    <input type="text" name="lastname" class="form-control" value={{student.lastname}}>
+    <input type="text" name="lastname" class="form-control" placeholder="Last Name">
   </div>
   <div class="form-group">
     <label>Reg. No.</label>
-    <input type="text" name="regno" class="form-control" value={{student.regno}}>
+    <input type="text" name="regno" class="form-control" placeholder="Reg. No.">
   </div>
   <div class="form-group">
     <label>DOB</label>
-    <input type="text" name="dob" class="form-control" value={{student.dob}}>
+    <input type="text" name="dob" class="form-control" placeholder="Date of Birth">
   </div>
   <div class="form-group">
     <label>Email</label>
-    <input type="text" name="email" class="form-control" value={{student.email}}>
+    <input type="text" name="email" class="form-control" placeholder="Email Address">
   </div>
   <div class="form-group">
     <label>School</label>
-    <input type="text" name="school" class="form-control" value={{student.school}}>
+    <input type="text" name="school" class="form-control" placeholder="School">
   </div>
   <div class="form-group">
     <label>Department</label>
-    <input type="text" name="department" class="form-control" value={{student.department}}>
+    <input type="text" name="department" class="form-control" placeholder="Department">
   </div>
   <div class="form-group">
     <label>Sex</label>
@@ -43,15 +44,15 @@
   </div>
   <div class="form-group">
     <label>Student Image</label>
-    <input type="text" name="imageUrl" class="form-control" value={{student.imageUrl}}>
+    <input type="text" name="imageUrl" class="form-control" placeholder="Image Url">
   </div>
   <div class="form-group">
     <label>Level</label>
-    <input type="text" name="level" class="form-control" value={{student.level}}>
+    <input type="text" name="level" class="form-control" placeholder="Level">
   </div>
   <div class="form-group">
     <label>Date Created</label>
-    <input type="text" name="dateCreated" class="form-control" value={{student.dateCreated}}>
+    <input type="text" name="dateCreated" class="form-control" placeholder="Date Created">
   </div>
 
   <input type="submit" class="btn btn-primary" value="Save">
