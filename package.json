@@ -1,0 +1,29 @@
+{
+  "name": "studentlistapi",
+  "version": "1.0.0",
+  "description": "An API for the Student records Web App for ALC 2.0 Assessment",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon server.js"
+  },
+  "keywords": [
+    "ALC",
+    "nodeJS",
+    "API",
+    "web",
+    "app",
+    "Andela"
+  ],
+  "author": "Abdulkarim Abdulrahman Ayoola",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "express-handlebars": "^3.0.0",
+    "method-override": "^2.3.10",
+    "mongodb": "^2.2.33"
+  },
+  "devDependencies": {
+    "nodemon": "^1.12.1"
+  }
+}
