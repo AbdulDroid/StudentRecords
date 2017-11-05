@@ -13,7 +13,6 @@ const port = 8000;
 const app = express();
 
 //body-parser
-app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 //View engine

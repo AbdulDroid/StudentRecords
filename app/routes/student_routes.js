@@ -15,7 +15,7 @@ module.exports = function(app, db) {
 		});
 	});
 
-	app.get('/students/:regno', (req, res) => {
+	app.get('/students/:regno', (req, res, next) => {
 		const regno = {'regno': req.params.regno};
 		db.collection('students').findOne(regno, (err, item) => {
 			if (err) {
@@ -49,7 +49,7 @@ module.exports = function(app, db) {
 			if (err) {
 				res.send({'error':'An error has occurred'});
 			} else {
-				res.send(result);
+				res.render('editstudent', {result: result});
 			}
 		});
 	});
@@ -65,7 +65,7 @@ module.exports = function(app, db) {
 			if (err) {
 				res.send({ 'error': 'An error has occured' });
 			} else {
-				res.send(result.ops[0]);
+				res.render('liststudent', {student:result.ops[0]});
 			}
 		});
 	});
