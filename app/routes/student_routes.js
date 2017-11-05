@@ -27,7 +27,7 @@ module.exports = function(app, db) {
 				res.send({'error':'An error has occurred'});
 			} else {
 				if (!item) {
-					res.render('searchstudent', {error: 'User does not exit'});
+					res.render('searchstudents', {error: 'User does not exist'});
 				} else {
 				res.render('liststudent', {student: item});
 				}
@@ -52,7 +52,7 @@ module.exports = function(app, db) {
 		res.render('editstudent');
 	});
 
-	app.post('/students/edit', (req, res, next) => {
+	app.put('/students/edit', (req, res, next) => {
 		const regno = {'regno': req.body.regno};
 		var firstname, lastname, email, dob, school, department,
 		sex, level, imageUrl, dateCreated, regno_old;
@@ -109,7 +109,7 @@ module.exports = function(app, db) {
 			if (err) {
 				res.send({'error':'An error has occurred'});
 			} else {
-				console.log({student: result})
+				console.log('student data: ' + result);
 				res.render('liststudent', {student: result});
 			}
 		});
@@ -118,7 +118,7 @@ module.exports = function(app, db) {
 	app.get('/students/add', function(req,res,next){
 		let regno = req.body.regno;
 		res.render('addstudent');
-	})
+	});
 
 	app.post('/students/add', (req, res, next) => {
 		const student = {firstname: req.body.firstname,

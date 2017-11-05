@@ -10,16 +10,16 @@
   <li class="list-group-item"><strong>School: </strong> {{student.school}}</li>
   <li class="list-group-item"><strong>Department: </strong> {{student.department}}</li>
   <li class="list-group-item"><strong>Level: </strong> {{student.level}}</li>
-</ul>
+</ul> <br />
 
 
 
 <form method="PUT" action="/students/edit">
-  <input type="submit" class="btn btn-info " value="EDIT">
-</form>
+  <input type="submit" class="btn btn-info " value="Edit">
+</form> <br />
 
 <form method="POST" action="/students/delete/{{student.regno}}?_method=DELETE">
   <input type="submit" class="btn btn-danger " value="Delete">
-</form>
+</form><br />
 <a class="btn btn-success " href="/">Done</a>
-</div>
+</div><br />
