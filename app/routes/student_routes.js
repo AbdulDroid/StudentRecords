@@ -10,7 +10,7 @@ module.exports = function(app, db) {
 			if (err) {
 				res.send({'error':'An error has occurred'});
 			} else {
-				res.render('allstudents', {students: results});
+				res.render('allstudents', {student: results});
 			}
 		});
 	});
