@@ -54,7 +54,11 @@ module.exports = function(app, db) {
 		});
 	});
 
-	app.post('/students/add', (req, res) => {
+	app.get('/students/add', function(req,res,next){
+		res.render('addstudent');
+	})
+
+	app.post('/students/add', (req, res, next) => {
 		const student = {firstname: req.body.firstName,
 		 lastname: req.body.lastName, regno: req.body.regno,
 		  dob: req.body.dob, school: req.body.school,

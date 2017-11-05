@@ -1,0 +1,53 @@
+<h3>Add New Student</h3>
+
+{{#if error}} <span>{{error}}</span>{{/if}}
+
+
+<div class="container">
+<p> Please take note of the generated student ID as you will require it for future transactions </p>
+
+<form method="POST" action="/student/add">
+  <div class="form-group">
+    <label>First Name</label>
+    <input type="text" name="first_name" class="form-control" placeholder="First Name">
+  </div>
+  <div class="form-group">
+    <label>Last Name</label>
+    <input type="text" name="last_name" class="form-control" placeholder="Last Name">
+  </div>
+  <div class="form-group">
+    <label>Reg. No.</label>
+    <input type="text" name="email" class="form-control" placeholder="Reg. No.">
+  </div>
+  <div class="form-group">
+    <label>DOB</label>
+    <input type="text" name="phone" class="form-control" placeholder="Date of Birth">
+  </div>
+  <div class="form-group">
+    <label>Email</label>
+    <input type="text" name="email" class="form-control" placeholder="Email Address">
+  </div>
+  <div class="form-group">
+    <label>School</label>
+    <input type="text" name="email" class="form-control" placeholder="School">
+  </div>
+  <div class="form-group">
+    <label>Department</label>
+    <input type="text" name="email" class="form-control" placeholder="Department">
+  </div>
+  <div class="form-group">
+    <label>Student Image</label>
+    <input type="text" name="image" class="form-control" placeholder="Image Url">
+  </div>
+  <div class="form-group">
+    <label>Level</label>
+    <input type="text" name="next_of_kin" class="form-control" placeholder="Level">
+  </div>
+  <div class="form-group">
+    <label>Date Created</label>
+    <input type="text" name="nok_phone" class="form-control" placeholder="Date Created">
+  </div>
+
+  <input type="submit" class="btn btn-primary" value="Save">
+</form>
+</div>
