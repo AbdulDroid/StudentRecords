@@ -15,13 +15,22 @@ module.exports = function(app, db) {
 		});
 	});
 
-	app.get('/students/:regno', (req, res, next) => {
+	app.get('/students/list', function(req, res, next){
+  let regno = req.body.regno;
+  res.render('searchstudent');
+});
+
+	app.post('/students/list', (req, res, next) => {
 		const regno = {'regno': req.params.regno};
 		db.collection('students').findOne(regno, (err, item) => {
 			if (err) {
 				res.send({'error':'An error has occurred'});
 			} else {
-				res.send(item);
+				if (!item) {
+					res.render('searchstudent', {error: 'User does not exit'});
+				} else {
+				res.render('liststudent', {student:item});
+				}
 			}
 		});
 	});
