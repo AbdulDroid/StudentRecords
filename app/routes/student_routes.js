@@ -46,7 +46,12 @@ module.exports = function(app, db) {
 		});
 	});
 
-	app.put('/students/edit/:regno', (req, res) => {
+	app.get('/students/edit', function(req, res, next){
+  let regno = req.body.regno;
+  res.render('editstudent');
+});
+
+	app.put('/students/edit', (req, res) => {
 		const regno = {'regno': req.params.regno};
 		const student = {firstname: req.body.firstName,
 		 lastname: req.body.lastName, regno: req.body.regno,
@@ -58,7 +63,7 @@ module.exports = function(app, db) {
 			if (err) {
 				res.send({'error':'An error has occurred'});
 			} else {
-				res.render('editstudent', {result: result});
+				res.render('liststudent', {student: result});
 			}
 		});
 	});

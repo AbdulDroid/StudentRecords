@@ -1,5 +1,6 @@
 <div class="container">
 <h3>Student details</h3>
+<img src={{student.imageUrl}} alt="" style="width: 120px; height: 100px">
 <ul class="list-group">
   <li class="list-group-item"><strong>First Name: </strong>{{student.firstname}}</li>
   <li class="list-group-item"><strong>Lastname: </strong>{{student.lastname}}</li>
@@ -17,7 +18,7 @@
   <input type="submit" class="btn btn-info " value="EDIT">
 </form>
 
-<form method="POST" action="/student/delete/{{student.regno}}?_method=DELETE">
+<form method="POST" action="/students/delete/{{student.regno}}?_method=DELETE">
   <input type="submit" class="btn btn-danger " value="Delete">
 </form>
 <a class="btn btn-success " href="/">Done</a>
