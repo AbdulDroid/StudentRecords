@@ -17,7 +17,7 @@ module.exports = function(app, db) {
 
 	app.get('/students/list', function(req, res, next){
   let regno = req.body.regno;
-  res.render('searchstudent');
+  res.render('searchstudents');
 });
 
 	app.post('/students/list', (req, res, next) => {
