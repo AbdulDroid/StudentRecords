@@ -21,7 +21,7 @@ module.exports = function(app, db) {
 });
 
 	app.post('/students/list', (req, res, next) => {
-		const regno = {'regno': req.params.regno};
+		const regno = {'regno': req.body.regno};
 		db.collection('students').findOne(regno, (err, item) => {
 			if (err) {
 				res.send({'error':'An error has occurred'});
@@ -29,7 +29,7 @@ module.exports = function(app, db) {
 				if (!item) {
 					res.render('searchstudent', {error: 'User does not exit'});
 				} else {
-				res.render('liststudent', {student:item});
+				res.render('liststudent', {student: item});
 				}
 			}
 		});
@@ -52,7 +52,7 @@ module.exports = function(app, db) {
 });
 
 	app.put('/students/edit', (req, res) => {
-		const regno = {'regno': req.params.regno};
+		const regno = {'regno': req.body.regno};
 		const student = {firstname: req.body.firstName,
 		 lastname: req.body.lastName, regno: req.body.regno,
 		  dob: req.body.dob, school: req.body.school,
